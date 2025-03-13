@@ -2,7 +2,7 @@
 import {useState, useEffect} from "react";
 import {PiArrowUpThin} from "react-icons/pi";
 
-const ScrollToTopButton = () => {
+export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   // Visar knappen efter 40px scroll
@@ -39,6 +39,4 @@ const ScrollToTopButton = () => {
       </button>
     )
   );
-};
-
-export default ScrollToTopButton;
+}
