@@ -1,15 +1,22 @@
 import "./globals.css";
-import {Poppins, League_Spartan} from "next/font/google";
+import {
+  Poppins,
+  League_Spartan,
+  Bebas_Neue,
+  Sofia_Sans,
+  Oswald,
+  Inter,
+} from "next/font/google";
 
 const poppinsFont = Poppins({
   variable: "--font-poppins",
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "600", "700"],
   subsets: ["latin"],
 });
 
-const leagueSpartanFont = League_Spartan({
-  variable: "--font-league-spartan",
-  weight: ["400"],
+const interFont = Inter({
+  variable: "--font-inter",
+  weight: ["300", "400", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -23,7 +30,7 @@ export default function RootLayout({children}) {
   return (
     <html lang="en">
       <body
-        className={`${poppinsFont.variable} ${leagueSpartanFont.variable} antialiased`}
+        className={`${poppinsFont.variable} ${interFont.variable} antialiased`}
       >
         {children}
       </body>
