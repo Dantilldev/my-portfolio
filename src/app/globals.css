@@ -17,8 +17,3 @@ a,
 button {
   cursor: pointer;
 }
-
-:root {
-  --color-primary: #aab9ff;
-  --font-roboto: Roboto, sans-serif;
-}

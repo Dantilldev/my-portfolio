@@ -16,8 +16,8 @@ export default function Home() {
 
   return (
     <div
-      className={`flex flex-col md:flex-row min-h-screen w-full subpixel-antialiased ${
-        darkMode ? "bg-black text-white" : "bg-white text-black"
+      className={`flex flex-col lg:flex-row min-h-screen w-full subpixel-antialiased ${
+        darkMode ? "bg-[#2E2A27] text-[#c1c1c1]" : "bg-[#ede8df] text-black"
       }`}
     >
       <HeaderLeft darkMode={darkMode} toggleDarkMode={toggleDarkMode} />

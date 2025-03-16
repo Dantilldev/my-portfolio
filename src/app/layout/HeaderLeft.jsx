@@ -110,9 +110,9 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
         <div className="flex flex-col items-start justify-start border-b border-gray-700 p-5 gap-5">
           <h1 className="font-semibold text-2xl">LANGUAGES</h1>
           <ul className=" flex flex-col list-disc list-inside gap-2">
-            <li>Swedish - Fluent</li>
-            <li>English - Fluent</li>
-            <li>Spanish - Fluent</li>
+            <li>Swedish</li>
+            <li>English</li>
+            <li>Spanish</li>
           </ul>
         </div>
       </div>

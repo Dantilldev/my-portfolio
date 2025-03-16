@@ -14,9 +14,10 @@ const poppinsFont = Poppins({
   subsets: ["latin"],
 });
 
-const interFont = Inter({
+const interFont = Bebas_Neue({
   variable: "--font-inter",
-  weight: ["300", "400", "600", "700"],
+  weight: ["400"],
+  // weight: ["300", "400", "600", "700"],
   subsets: ["latin"],
 });
 
