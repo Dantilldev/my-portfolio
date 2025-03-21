@@ -20,7 +20,7 @@ export default function ScrollToTopButton() {
     };
   }, []);
 
-  // Scrolla till toppen
+  // Scroll to top on click
   function scrollToTop() {
     window.scrollTo({
       top: 0,

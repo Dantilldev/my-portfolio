@@ -50,13 +50,19 @@ export default function HomePage() {
         <section className="flex flex-col gap-5 mb-20">
           <h1 className="text-4xl font-semibold">About Me</h1>
           <p className="text-lg">
-            I am a web developer based in Stockholm, passionate about bringing
-            ideas to life, with an eye for detailss I am a web developer based
-            in Stockholm, passionate about bringing ideas to life, with an eye
-            for detailss I am a web developer based in Stockholm, passionate
-            about bringing ideas to life, with an eye for detailss for detailss
-            I am a web developer based in Stockholm, passionate about bringing
-            ideas to life, with an eye for detailss
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit
+            animi aperiam at, quo fuga doloremque debitis labore reprehenderit.
+            Placeat quasi voluptas consequuntur eveniet praesentium, nemo
+            perspiciatis nam alias deserunt quam numquam nesciunt odio modi
+            blanditiis illo similique maiores optio, reiciendis debitis
+            voluptate. Ad est ea asperiores, magni repellat consequuntur
+            quisquam! ideas to life, with an eye for detailss Lorem ipsum dolor
+            sit amet, consectetur adipisicing elit. Fugit animi aperiam at, quo
+            fuga doloremque debitis labore reprehenderit. Placeat quasi voluptas
+            consequuntur eveniet praesentium, nemo perspiciatis nam alias
+            deserunt quam numquam nesciunt odio modi blanditiis illo similique
+            maiores optio, reiciendis debitis voluptate. Ad est ea asperiores,
+            magni repellat consequuntur quisquam!
           </p>
         </section>
 
