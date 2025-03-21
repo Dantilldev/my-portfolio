@@ -2,15 +2,51 @@
 
 body {
   font-family: var(--font-poppins), sans-serif;
+  overflow-x: hidden;
   width: 100vw;
   height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Light Mode (default) */
+:root {
+  --bg-color: #f5f3eb; /* Sandig beige bakgrund */
+  --text-color: #3d2c2e; /* Mörkbrun text */
+  --primary-color: #a67c52; /* Brun/beige ton (träinspirerad) */
+  --secondary-color: #8d9b6a; /* Olivgrön (naturlig accent) */
+  --border-color: #d6c9a9; /* Ljus beige border */
+
+  --hover-color: #e0dbc8; /* Ljus sandig hover-effekt */
+  --skills-bg: #cfd0dc; /* Sandig beige bakgrund för skills */
+  --card-bg: #cfd0dc; /* Vit kortbakgrund */
+}
+
+/* Dark Mode */
+.dark {
+  --bg-color: #2a2a1e; /* Djup brun/svart bakgrund */
+  --text-color: #e2b554; /* Ljus sandfärgad text */
+  --primary-color: #8b5e3b; /* Mörkbrun träton */
+  --secondary-color: #6b705c; /* Dämpad olivgrön */
+  --border-color: #3d3228; /* Mörkbrun border */
+
+  --hover-color: #534b3a; /* Mjuk mörk hover-effekt */
+  --skills-bg: #505c53;
+  --card-bg: #505c53; /* Mörkgrå/brun kortbakgrund */
+}
+
+.skills-bg {
+  background-color: var(--skills-bg);
+}
+.card-bg {
+  background-color: var(--card-bg);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--bebas-neue), sans-serif;
 }
 
 a,

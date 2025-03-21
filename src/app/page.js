@@ -1,25 +1,27 @@
 "use client";
-import Navbar from "@/components/Navbar";
-
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import HomePage from "./layout/HomePage";
 import HeaderLeft from "./layout/HeaderLeft";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
 
+  useEffect(() => {
+    console.log("Dark mode:", darkMode);
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   function toggleDarkMode() {
     setDarkMode((prev) => !prev);
-    document.body.classList.toggle("dark", !darkMode);
   }
 
   return (
-    <div
-      className={`flex flex-col lg:flex-row min-h-screen w-full subpixel-antialiased ${
-        darkMode ? "bg-[#2E2A27] text-[#c1c1c1]" : "bg-[#ede8df] text-black"
-      }`}
-    >
+    <div className="flex flex-col lg:flex-row min-h-screen w-full subpixel-antialiase">
       <HeaderLeft darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <HomePage />
       <ScrollToTopButton />

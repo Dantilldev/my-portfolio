@@ -3,18 +3,52 @@ import {IoLocationOutline, IoCallOutline} from "react-icons/io5";
 import {MdOutlineEmail} from "react-icons/md";
 import {LuSun, LuMoon} from "react-icons/lu";
 import {CiLinkedin} from "react-icons/ci";
-
 import {VscGithubAlt} from "react-icons/vsc";
+import {useState} from "react";
+import {motion} from "framer-motion";
+
+const hobbies = [
+  "Brazilian Jiu-Jitsu",
+  "Climbing",
+  "Gaming",
+  "Music",
+  "Programming",
+];
+
+const education = [
+  {
+    title: "Frontend Developer",
+    school: "Chas Academy",
+    year: "2024-",
+  },
+  {
+    title: "Webb Utveckling",
+    school: "Åsö Gymnasium",
+    year: "2023",
+  },
+  {
+    title: "Programering 1 (Javascript)",
+    school: "Åsö Gymnasium",
+    year: "2023",
+  },
+];
+
+function handleCopyEmail() {
+  const email = "daniel.tilleria@hotmail.com"; //
+  navigator.clipboard.writeText(email);
+}
 
 export default function HeaderLeft({darkMode, toggleDarkMode}) {
+  const [showTooltip, setShowTooltip] = useState(false);
+
   return (
-    <div className="flex-1 min-h-screen w-full relative p-10 transition-all duration-600 dark:bg-black dark:text-white border-gray-700 sm:border-r">
+    <div className="flex-1 min-h-screen w-full relative p-10 transition-all duration-600  sm:border-r">
       <div className="flex flex-col gap-5">
         <div className="flex flex-col items-center justify-center gap-5">
           <img
             src="/me.jpeg"
             alt="I'ts me Daniel"
-            className="w-32 h-32 rounded-full object-cover border-4 border-gray-700"
+            className="w-auto h-48 rounded-full object-cover border-4"
           />
 
           <div className="text-center space-y-1">
@@ -32,16 +66,31 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
           </button>
         </div>
         {/* Contact */}
-        <div className=" flex flex-col items-start justify-start border-b border-gray-700 p-5">
+        <div className=" flex flex-col items-start justify-start border-b p-5">
           <ul className=" space-y-3">
             <li className="flex items-center gap-2">
               <IoLocationOutline className="text-2xl" />
               <span className="text-lg">Stockholm</span>
             </li>
+            {showTooltip && (
+              <div
+                className="bg-[var(--hover-color) absolute top-93 left-70 px-2 bg-black text-white rounded-sm after:absolute after:bottom-[-5px] after:left-1/2 after:-translate-x-1/2
+                after:border-x-6 after:border-t-6 after:border-transparent after:border-t-black "
+              >
+                Copy
+              </div>
+            )}
             <li className="flex items-center gap-2">
-              <MdOutlineEmail className="text-2xl" />
-
-              <span className="text-lg">daniel.tilleria@hotmail.com</span>
+              <button
+                onClick={handleCopyEmail}
+                className="text-lg flex items-center gap-2"
+                onMouseEnter={() => setShowTooltip(true)}
+                onMouseLeave={() => setShowTooltip(false)}
+              >
+                {" "}
+                <MdOutlineEmail className="text-2xl " />
+                daniel.tilleria@hotmail.com
+              </button>
             </li>
             <li className="flex items-center gap-2">
               <IoCallOutline className="text-2xl" />
@@ -50,8 +99,10 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
           </ul>
         </div>
         {/* Social */}
-        <div className="flex flex-col items-start justify-start border-b border-gray-700 p-5 gap-5">
+
+        <div className="flex flex-col items-start justify-start border-b p-5 gap-5">
           <h1 className="font-semibold text-2xl ">SOCIAL</h1>
+
           <ul className="space-y-3">
             <li className="flex items-center gap-2">
               <VscGithubAlt className="text-2xl" />
@@ -63,51 +114,44 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col items-start justify-start gap-5 border-b p-5 border-gray-700">
-          <h1 className=" font-semibold text-2xl">EDUCATION</h1>
-          <ul className="flex flex-col gap-5">
-            <li className=" relative flex flex-col gap-1 border-l p-6 before:absolute before:left-[-6px] before:top-1/2 before:h-3 before:w-3 before:-translate-y-1/2 before:rounded-full before:transform before:bg-black before:dark:bg-white dark:bg-white">
-              <span className="font-semibold md:text-lg">
-                Frontend Developer
-              </span>
-              <span className=" font-light">Chas Academy</span>
-              <span className="text-sm">2024- </span>
-            </li>
-            <li className=" relative flex flex-col gap-1 border-l p-6 before:absolute before:left-[-6px] before:top-1/2 before:h-3 before:w-3 before:-translate-y-1/2 before:rounded-full before:transform before:bg-black ">
-              <span className="font-semibold md:text-lg">Webb Utveckling</span>
-              <span className=" font-light">Åsö Gymnasium</span>
-              <span className="text-sm">2023</span>
-            </li>
-            <li className=" relative flex flex-col gap-1 border-l p-6 before:absolute before:left-[-6px] before:top-1/2 before:h-3 before:w-3 before:-translate-y-1/2 before:rounded-full before:transform before:bg-black ">
-              <span className="font-semibold md:text-lg">
-                Programering 1 (Javascript)
-              </span>
-              <span className=" font-light">Åsö Gymnasium</span>
-              <span className="text-sm">2023</span>
-            </li>
-          </ul>
+        {/* Education */}
+        <div className="flex flex-col items-start justify-start gap-5 border-b p-5 ">
+          <h1 className="font-semibold text-2xl">EDUCATION</h1>
+          <motion.ul
+            className="flex flex-col gap-5"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 1}}
+          >
+            {education.map((item, index) => (
+              <motion.li
+                key={index}
+                className="relative flex flex-col gap-1 border-l p-6 before:absolute before:left-[-6px] before:top-1/2 before:h-3 before:w-3 before:-translate-y-1/2 before:rounded-full before:transform before:bg-[var(--text-color)] "
+                initial={{opacity: 0, x: -20}}
+                animate={{opacity: 1, x: 0}}
+                transition={{delay: index * 0.2, duration: 0.8}}
+              >
+                <span className="font-semibold md:text-lg">{item.title}</span>
+                <span className="font-light">{item.school}</span>
+                <span className="text-sm">{item.year}</span>
+              </motion.li>
+            ))}
+          </motion.ul>
         </div>
-        <div className="flex flex-col items-start justify-start border-b border-gray-700 p-5 gap-5">
-          <h1 className="font-semibold text-2xl ">HOBBIES</h1>
+
+        {/* Hobbies */}
+        <div className="flex flex-col items-start justify-start p-5 gap-5 border-b">
+          <h1 className="font-semibold text-2xl">HOBBIES</h1>
           <ul className="flex flex-wrap gap-2">
-            <li className="flex items-center bg-gray-200 px-2 rounded-sm">
-              Brazilian Jiujitsu
-            </li>
-            <li className="flex items-center bg-gray-200  px-2 rounded-sm">
-              Climbing
-            </li>
-            <li className="flex items-center bg-gray-200  px-2 rounded-sm">
-              Cooking
-            </li>
-            <li className="flex items-center bg-gray-200  px-2 rounded-sm">
-              Gaming
-            </li>
-            <li className="flex items-center bg-gray-200  px-2 rounded-sm">
-              Music
-            </li>
+            {hobbies.map((hobby, index) => (
+              <li key={index} className="flex items-center px-2 rounded-sm ">
+                {hobby}
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="flex flex-col items-start justify-start border-b border-gray-700 p-5 gap-5">
+        {/* Languages */}
+        <div className="flex flex-col items-start justify-start border-b p-5 gap-5">
           <h1 className="font-semibold text-2xl">LANGUAGES</h1>
           <ul className=" flex flex-col list-disc list-inside gap-2">
             <li>Swedish</li>

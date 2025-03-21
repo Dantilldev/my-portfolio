@@ -5,7 +5,7 @@ import {PiArrowUpThin} from "react-icons/pi";
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Visar knappen efter 40px scroll
+  // Showing the button after 40px
   useEffect(() => {
     function handleScroll() {
       if (window.scrollY > 40) {
@@ -20,7 +20,7 @@ export default function ScrollToTopButton() {
     };
   }, []);
 
-  // Scrolla till toppeen
+  // Scrolla till toppen
   function scrollToTop() {
     window.scrollTo({
       top: 0,
