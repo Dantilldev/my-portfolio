@@ -11,7 +11,7 @@ const skillsData = [
   },
   {
     category: "Backend",
-    skills: ["Node.js", "Express"],
+    skills: ["Node.js", "Express", "MySQL"],
   },
 ];
 
