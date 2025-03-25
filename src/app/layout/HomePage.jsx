@@ -20,22 +20,23 @@ const projects = [
     imageSrc: "/earth.jpg",
     title: "Project 1",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus, ",
+    gitHubLink: "https://github.com/Dantilldev/chase-the-rabbit",
     techStack: ["HTML5", "TailwindCSS", "JavaScript"],
   },
   {
-    imageSrc: "/earth.jpg",
+    imageSrc: "/moon.jpg",
     title: "Project 2",
     text: "um et dui rhoncus, eget laoreet mi tincidunt.",
     techStack: ["HTML5", "TailwindCSS", "JavaScript"],
   },
   {
-    imageSrc: "/earth.jpg",
+    imageSrc: "/planet1.jpg",
     title: "Project 3",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus, eget laoreet mi tincidunt.",
     techStack: ["HTML5", "TailwindCSS", "JavaScript"],
   },
   {
-    imageSrc: "/earth.jpg",
+    imageSrc: "/planet2.jpg",
     title: "Project 4",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus, eget laoreet mi tincidunt.",
     techStack: ["HTML5", "TailwindCSS", "JavaScript"],
@@ -104,6 +105,7 @@ export default function HomePage() {
                   title={project.title}
                   text={project.text}
                   techStack={project.techStack}
+                  gitHubLink={project.gitHubLink}
                 />
               ))}
             </div>

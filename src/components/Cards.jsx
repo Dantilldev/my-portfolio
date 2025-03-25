@@ -2,7 +2,7 @@ import React from "react";
 import {RiLiveFill} from "react-icons/ri";
 import {FaGithubSquare} from "react-icons/fa";
 
-export default function Cards({imageSrc, title, text, techStack}) {
+export default function Cards({imageSrc, title, text, techStack, gitHubLink}) {
   return (
     <div className="max-w-xs rounded-3xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-105 h-[521px] flex flex-col card-bg">
       {/* Image */}
@@ -33,7 +33,7 @@ export default function Cards({imageSrc, title, text, techStack}) {
           <a href="" target="_blank">
             <RiLiveFill />
           </a>
-          <a href="" target="_blank">
+          <a href={gitHubLink} target="_blank">
             <FaGithubSquare />
           </a>
         </div>

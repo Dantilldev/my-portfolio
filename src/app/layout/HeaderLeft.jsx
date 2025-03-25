@@ -33,13 +33,13 @@ const education = [
   },
 ];
 
-function handleCopyEmail() {
-  const email = "daniel.tilleria@hotmail.com"; //
-  navigator.clipboard.writeText(email);
-}
-
 export default function HeaderLeft({darkMode, toggleDarkMode}) {
   const [showTooltip, setShowTooltip] = useState(false);
+
+  function handleCopyEmail() {
+    const email = "daniel.tilleria@hotmail.com"; //
+    navigator.clipboard.writeText(email);
+  }
 
   return (
     <div className="flex-1 min-h-screen w-full relative p-10  sm:border-r">
