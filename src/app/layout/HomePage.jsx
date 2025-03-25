@@ -77,7 +77,7 @@ export default function HomePage() {
                   {section.skills.map((skill, skillIndex) => (
                     <li
                       key={skillIndex}
-                      className="border py-1 px-4 rounded-4xl text-lg skills-bg "
+                      className="border py-1 px-4 rounded-4xl text-lg skills-bg"
                     >
                       {skill}
                     </li>

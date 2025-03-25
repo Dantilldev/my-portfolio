@@ -42,7 +42,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <div className="flex-1 min-h-screen w-full relative p-10 transition-all duration-600  sm:border-r">
+    <div className="flex-1 min-h-screen w-full relative p-10  sm:border-r">
       <div className="flex flex-col gap-5">
         <div className="flex flex-col items-center justify-center gap-5">
           <img
@@ -106,11 +106,25 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
           <ul className="space-y-3">
             <li className="flex items-center gap-2">
               <VscGithubAlt className="text-2xl" />
-              <span className="text-lg">GitHub</span>
+              <a
+                href="https://github.com/Dantilldev"
+                target="_blank"
+                title="GitHub"
+                className="text-lg"
+              >
+                GitHub
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <CiLinkedin className="text-2xl" />
-              <span className="text-lg">Linkedin</span>
+              <a
+                href="https://www.linkedin.com/in/daniel-tilleria-17a0b9259/"
+                target="_blank"
+                title="Linkedin"
+                className="text-lg"
+              >
+                Linkedin
+              </a>
             </li>
           </ul>
         </div>
@@ -126,7 +140,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
             {education.map((item, index) => (
               <motion.li
                 key={index}
-                className="relative flex flex-col gap-1 border-l p-6 before:absolute before:left-[-6px] before:top-1/2 before:h-3 before:w-3 before:-translate-y-1/2 before:rounded-full before:transform before:bg-[var(--text-color)] "
+                className="relative flex flex-col gap-1 border-l p-6 before:absolute before:left-[-6px] before:top-1/2 before:h-3 before:w-3 before:-translate-y-1/2 before:rounded-full before:transform before:bg-[var(--text-color)]"
                 initial={{opacity: 0, x: -20}}
                 animate={{opacity: 1, x: 0}}
                 transition={{delay: index * 0.2, duration: 0.8}}

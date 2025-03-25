@@ -18,7 +18,7 @@ body {
   --border-color: #d6c9a9; /* Ljus beige border */
 
   --hover-color: #e0dbc8; /* Ljus sandig hover-effekt */
-  --skills-bg: #cfd0dc; /* Sandig beige bakgrund för skills */
+  --skills-bg: #42a0a0; /* Sandig beige bakgrund för skills */
   --card-bg: #cfd0dc; /* Vit kortbakgrund */
 }
 
@@ -31,7 +31,7 @@ body {
   --border-color: #3d3228; /* Mörkbrun border */
 
   --hover-color: #534b3a; /* Mjuk mörk hover-effekt */
-  --skills-bg: #505c53;
+  --skills-bg: #35a651;
   --card-bg: #505c53; /* Mörkgrå/brun kortbakgrund */
 }
 

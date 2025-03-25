@@ -9,7 +9,7 @@ const poppinsFont = Poppins({
 
 const bebasFont = Bebas_Neue({
   variable: "--bebas-neue",
-  weight: ["400"], // Bebas Neue only has one weight
+  weight: ["400"],
   subsets: ["latin"],
 });
 
