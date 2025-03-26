@@ -69,7 +69,7 @@ export default function HomePage() {
 
         {/* Skills */}
         <section className="flex flex-col gap-5 mb-20 ">
-          <h1 className="text-4xl font-semibold">Skills</h1>
+          <h1 className="text-4xl font-semibold">My Tech Toolbox</h1>
           <div className="flex flex-col gap-5">
             {skillsData.map((section, index) => (
               <div key={index} className="flex flex-col gap-2">
@@ -78,7 +78,7 @@ export default function HomePage() {
                   {section.skills.map((skill, skillIndex) => (
                     <li
                       key={skillIndex}
-                      className="border py-1 px-4 rounded-4xl text-lg skills-bg"
+                      className=" py-1 px-4 rounded-4xl text-lg skills-bg"
                     >
                       {skill}
                     </li>

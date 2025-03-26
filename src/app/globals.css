@@ -11,28 +11,28 @@ body {
 
 /* Light Mode (default) */
 :root {
-  --bg-color: #f5f3eb; /* Sandig beige bakgrund */
-  --text-color: #3d2c2e; /* Mörkbrun text */
-  --primary-color: #a67c52; /* Brun/beige ton (träinspirerad) */
-  --secondary-color: #8d9b6a; /* Olivgrön (naturlig accent) */
-  --border-color: #d6c9a9; /* Ljus beige border */
+  --bg-color: #f9fafb; /* Ljus bakgrund, nästan vit */
+  --text-color: #1f2937; /* Mörkblågrå text */
+  --primary-color: #3b82f6; /* Modern blå */
+  --secondary-color: #10b981; /* Fräsch grön accent */
+  --border-color: #e5e7eb; /* Ljusgrå border */
 
-  --hover-color: #e0dbc8; /* Ljus sandig hover-effekt */
-  --skills-bg: #c607c6; /* Sandig beige bakgrund för skills */
-  --card-bg: #cfd0dc; /* Vit kortbakgrund */
+  --hover-color: #dbeafe; /* Ljus blå hover-effekt */
+  --skills-bg: #c9c7bd; /* Guldgul för skills-sektion */
+  --card-bg: #ffffff; /* Vit kortbakgrund */
 }
 
 /* Dark Mode */
 .dark {
-  --bg-color: #2a2a1e; /* Djup brun/svart bakgrund */
-  --text-color: #e2b554; /* Ljus sandfärgad text */
-  --primary-color: #8b5e3b; /* Mörkbrun träton */
-  --secondary-color: #6b705c; /* Dämpad olivgrön */
-  --border-color: #3d3228; /* Mörkbrun border */
+  --bg-color: #1f2937; /* Mörkblågrå bakgrund */
+  --text-color: #f9fafb; /* Nästan vit text */
+  --primary-color: #60a5fa; /* Ljusare blå för bättre synlighet */
+  --secondary-color: #34d399; /* Ljusgrön accent */
+  --border-color: #374151; /* Mörkgrå border */
 
-  --hover-color: #534b3a; /* Mjuk mörk hover-effekt */
-  --skills-bg: #35a651;
-  --card-bg: #505c53; /* Mörkgrå/brun kortbakgrund */
+  --hover-color: #4b5563; /* Dämpad mörk hover-effekt */
+  --skills-bg: #514c3d; /* Mjuk gul för skills */
+  --card-bg: #374151; /* Mörkgrå kortbakgrund */
 }
 
 .skills-bg {

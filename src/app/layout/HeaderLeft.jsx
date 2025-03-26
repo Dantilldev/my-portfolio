@@ -158,7 +158,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
           <h1 className="font-semibold text-2xl">HOBBIES</h1>
           <ul className="flex flex-wrap gap-2">
             {hobbies.map((hobby, index) => (
-              <li key={index} className="flex items-center px-2 rounded-sm ">
+              <li key={index} className="flex items-center px-2 rounded-xl">
                 {hobby}
               </li>
             ))}
