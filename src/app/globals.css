@@ -14,7 +14,7 @@ body {
   --bg-color: #f9fafb; /* Ljus bakgrund, nästan vit */
   --text-color: #1f2937; /* Mörkblågrå text */
   --primary-color: #3b82f6; /* Modern blå */
-  --secondary-color: #10b981; /* Fräsch grön accent */
+  --secondary-color: #6b7280; /* Fräsch grön accent */
   --border-color: #e5e7eb; /* Ljusgrå border */
 
   --hover-color: #dbeafe; /* Ljus blå hover-effekt */
@@ -27,7 +27,7 @@ body {
   --bg-color: #1f2937; /* Mörkblågrå bakgrund */
   --text-color: #f9fafb; /* Nästan vit text */
   --primary-color: #60a5fa; /* Ljusare blå för bättre synlighet */
-  --secondary-color: #34d399; /* Ljusgrön accent */
+  --secondary-color: #6b7280; /* Ljusgrön accent */
   --border-color: #374151; /* Mörkgrå border */
 
   --hover-color: #4b5563; /* Dämpad mörk hover-effekt */
@@ -35,11 +35,18 @@ body {
   --card-bg: #374151; /* Mörkgrå kortbakgrund */
 }
 
+.secondary-color {
+  color: var(--secondary-color);
+}
+
 .skills-bg {
   background-color: var(--skills-bg);
 }
 .card-bg {
   background-color: var(--card-bg);
+}
+.border {
+  border-color: var(--border-color);
 }
 
 h1,
@@ -49,7 +56,26 @@ h4 {
   font-family: var(--bebas-neue), sans-serif;
 }
 
+.about-text {
+  font-family: var(--font-roboto), sans-serif;
+}
+
 a,
 button {
   cursor: pointer;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
 }

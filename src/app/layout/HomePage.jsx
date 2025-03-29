@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import Cards from "@/components/Cards";
 import {motion} from "framer-motion";
+import Footer from "@/components/Footer";
+import FlipCard from "@/components/FlipCard";
 
 const skillsData = [
   {
@@ -45,25 +46,19 @@ const projects = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex-3 ">
-      <main className="flex flex-col p-5 ">
+    <div className="min-h-screen flex-3 flex-col ">
+      <main className="p-10">
         {/* About Me */}
         <section className="flex flex-col gap-5 mb-20">
           <h1 className="text-4xl font-semibold">About Me</h1>
-          <p className="text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit
-            animi aperiam at, quo fuga doloremque debitis labore reprehenderit.
-            Placeat quasi voluptas consequuntur eveniet praesentium, nemo
-            perspiciatis nam alias deserunt quam numquam nesciunt odio modi
-            blanditiis illo similique maiores optio, reiciendis debitis
-            voluptate. Ad est ea asperiores, magni repellat consequuntur
-            quisquam! ideas to life, with an eye for detailss Lorem ipsum dolor
-            sit amet, consectetur adipisicing elit. Fugit animi aperiam at, quo
-            fuga doloremque debitis labore reprehenderit. Placeat quasi voluptas
-            consequuntur eveniet praesentium, nemo perspiciatis nam alias
-            deserunt quam numquam nesciunt odio modi blanditiis illo similique
-            maiores optio, reiciendis debitis voluptate. Ad est ea asperiores,
-            magni repellat consequuntur quisquam!
+          <p className="text-lg font-mono">
+            A frontend developer who creates web and mobile apps with some
+            backend capability. Currently studying at Chas Academy in Stockholm
+            to improve my skills. I am a motivated and curious problem-solver
+            who enjoys working in teams to tackle challenges and create
+            meaningful solutions. When I am not coding, I practice Brazilian
+            Jiu-Jitsu which helps me stay focused and motivated as I grow as a
+            developer.
           </p>
         </section>
 
@@ -74,11 +69,12 @@ export default function HomePage() {
             {skillsData.map((section, index) => (
               <div key={index} className="flex flex-col gap-2">
                 <h2 className="text-2xl font-semibold">{section.category}</h2>
-                <ul className="flex flex-wrap gap-5 ">
+
+                <ul className="flex flex-wrap gap-5">
                   {section.skills.map((skill, skillIndex) => (
                     <li
                       key={skillIndex}
-                      className=" py-1 px-4 rounded-4xl text-lg skills-bg"
+                      className=" py-1 px-4 rounded-4xl text-lg skills-bg "
                     >
                       {skill}
                     </li>
@@ -90,7 +86,22 @@ export default function HomePage() {
         </section>
 
         {/* Projects */}
-        <section className="flex flex-col justify-center items-center gap-5 mb-20 ">
+        <section className="flex flex-col justify-center items-center gap-5 mb-20">
+          <h1 className="text-4xl font-semibold text-center">Projects</h1>
+          <div className="grid md:grid-cols-2 2xl:grid-cols-4 justify-center items-center gap-10">
+            {projects.map((project, index) => (
+              <FlipCard
+                key={index}
+                imageSrc={project.imageSrc}
+                title={project.title}
+                text={project.text}
+                techStack={project.techStack}
+                gitHubLink={project.gitHubLink}
+              />
+            ))}
+          </div>
+        </section>
+        {/* <section className="flex flex-col justify-center items-center gap-5 mb-20 ">
           <h1 className="text-4xl font-semibold text-center">Projects</h1>
           <motion.div
             initial={{opacity: 0, y: -20}}
@@ -110,24 +121,21 @@ export default function HomePage() {
               ))}
             </div>
           </motion.div>
-        </section>
+        </section> */}
 
         {/* CTA-Btn */}
-        <div className="flex justify-center">
+        <div className="flex justify-center p-10">
           <section className="flex flex-col items-center gap-5 mb-10 w-[600px] p-4 ">
-            <h1 className="text-4xl font-semibold">Lorem, ipsum. blabla ? </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              fugiat illum culpa mollitia hic. Molestias consequatur repudiandae
-              eius accusantium soluta.
-            </p>
-            <button className="bg-[#A6A28B] border py-3 px-5 w-56 rounded-sm transform transition-all hover:scale-105">
-              Get in touch
-            </button>
+            <h1 className="text-4xl font-semibold">Want to collabrate?</h1>
+
+            <a href="mailto:daniel.tilleria@hotmail.com">
+              <button className="bg-[#A6A28B] border py-3 px-5 w-56 rounded-sm transform transition-all hover:scale-105">
+                Open mail
+              </button>
+            </a>
           </section>
         </div>
       </main>
-      <ScrollToTopButton />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import "./globals.css";
-import {Poppins, Bebas_Neue} from "next/font/google";
+import {Poppins, Bebas_Neue, Roboto} from "next/font/google";
 
 const poppinsFont = Poppins({
   variable: "--font-poppins",
@@ -13,6 +13,12 @@ const bebasFont = Bebas_Neue({
   subsets: ["latin"],
 });
 
+const robotoFont = Roboto({
+  variable: "--font-roboto",
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+});
+
 export const metadata = {
   title: "Daniel portfolio",
   description:
@@ -23,7 +29,7 @@ export default function RootLayout({children}) {
   return (
     <html lang="en">
       <body
-        className={`${poppinsFont.variable} ${bebasFont.variable} antialiased `}
+        className={`${poppinsFont.variable} ${bebasFont.variable} ${robotoFont.variable} antialiased `}
       >
         {children}
       </body>

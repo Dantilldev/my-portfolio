@@ -42,7 +42,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
   }
 
   return (
-    <div className="flex-1 min-h-screen w-full relative p-10  sm:border-r">
+    <div className="flex-1 min-h-screen w-full p-10 relative sm:border-r">
       <div className="flex flex-col gap-5">
         <div className="flex flex-col items-center justify-center gap-5">
           <img
@@ -57,13 +57,17 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
             </h1>
             <h3 className="text-lg">Web Developer</h3>
           </div>
-          <button className="absolute top-10 right-10" onClick={toggleDarkMode}>
+          <motion.button
+            whileTap={{scale: 0.6}}
+            className="absolute top-10 right-10"
+            onClick={toggleDarkMode}
+          >
             {darkMode ? (
-              <LuSun className="text-2xl " />
+              <LuSun className="text-2xl text-yellow-300" />
             ) : (
-              <LuMoon className="text-2xl " />
+              <LuMoon className="text-2xl" />
             )}
-          </button>
+          </motion.button>
         </div>
         {/* Contact */}
         <div className=" flex flex-col items-start justify-start border-b p-5">
@@ -104,7 +108,14 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
           <h1 className="font-semibold text-2xl ">SOCIAL</h1>
 
           <ul className="space-y-3">
-            <li className="flex items-center gap-2">
+            <motion.li
+              whileHover={{
+                y: -2, // Rörelse uppåt vid hover
+                scale: 1.05, // Gör länken lite större
+                transition: {type: "spring", stiffness: 300, damping: 10}, // Justera transitionen för mer "bounce"
+              }}
+              className="flex items-center gap-2"
+            >
               <VscGithubAlt className="text-2xl" />
               <a
                 href="https://github.com/Dantilldev"
@@ -114,8 +125,15 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
               >
                 GitHub
               </a>
-            </li>
-            <li className="flex items-center gap-2">
+            </motion.li>
+            <motion.li
+              whileHover={{
+                y: -2, // Rörelse uppåt vid hover
+                scale: 1.05, // Gör länken lite större
+                transition: {type: "spring", stiffness: 300, damping: 10}, // Justera transitionen för mer "bounce"
+              }}
+              className="flex items-center gap-2"
+            >
               <CiLinkedin className="text-2xl" />
               <a
                 href="https://www.linkedin.com/in/daniel-tilleria-17a0b9259/"
@@ -125,7 +143,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
               >
                 Linkedin
               </a>
-            </li>
+            </motion.li>
           </ul>
         </div>
         {/* Education */}

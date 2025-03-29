@@ -3,6 +3,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import HomePage from "./layout/HomePage";
 import HeaderLeft from "./layout/HeaderLeft";
 import {useState, useEffect} from "react";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -20,12 +21,17 @@ export default function Home() {
   }, [darkMode]);
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen w-full subpixel-antialiase">
-      <HeaderLeft
-        darkMode={darkMode}
-        toggleDarkMode={() => setDarkMode(!darkMode)}
-      />
-      <HomePage />
+    <div className="flex-1 flex-col min-h-screen">
+      <div className="flex flex-col lg:flex-row">
+        <HeaderLeft
+          darkMode={darkMode}
+          toggleDarkMode={() => setDarkMode(!darkMode)}
+        />
+        <div className="min-h-screen flex flex-col">
+          <HomePage />
+          <Footer /> {/* Footer will stay at the bottom now */}
+        </div>
+      </div>
       <ScrollToTopButton />
     </div>
   );
