@@ -8,19 +8,20 @@ export default function FlipCard({
   text,
   techStack,
   gitHubLink,
+  liveLink,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleFlip = () => {
+  function handleFlip() {
     setIsFlipped(!isFlipped);
-  };
+  }
 
   return (
     <div
       className="w-70 h-96 [perspective:1000px]"
-      onClick={handleFlip} // Gör att den flippar på klick
-      onMouseEnter={() => setIsFlipped(true)} // Aktiverar flip på hover
-      onMouseLeave={() => setIsFlipped(false)} // Återställer när musen lämnar
+      onClick={handleFlip}
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
     >
       <div
         className={`w-full h-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] ${
@@ -37,19 +38,23 @@ export default function FlipCard({
         </div>
 
         {/* BakSida */}
-        <div className="absolute w-full h-full bg-gray-900 text-white shadow-lg rounded-3xl flex flex-col items-center justify-center p-5 [transform:rotateY(180deg)] [backface-visibility:hidden]">
-          <p className="text-center">{text}</p>
-          <div className="flex flex-wrap gap-2 mt-3">
+        <div className="w-full h-full primary-background-color text-white shadow-lg rounded-3xl flex flex-col justify-start  [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <h3 className="text-2xl text-center w-full mt-5">{title}</h3>{" "}
+          <p className="flex items-center text-center p-2 h-45">{text}</p>
+          <div className="flex flex-wrap gap-2 p-2 mt-5">
             {techStack.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 text-sm bg-gray-700 rounded-full"
+                className="px-3 py-1 text-sm skills-bg rounded-full"
               >
                 {tech}
               </span>
             ))}
           </div>
-          <div className="flex gap-3 mt-4 text-2xl">
+          <div className="absolute bottom-2 right-3 flex justify-end gap-4 text-2xl w-full ">
+            <a href={liveLink} target="_blank">
+              <RiLiveFill />
+            </a>
             <a href={gitHubLink} target="_blank">
               <FaGithubSquare />
             </a>

@@ -21,50 +21,38 @@ export default function Home() {
   }, [darkMode]);
 
   return (
-    <div className="flex-1 flex-col min-h-screen">
-      <div className="flex flex-col min-[1140px]:flex-row">
-        <HeaderLeft
-          darkMode={darkMode}
-          toggleDarkMode={() => setDarkMode(!darkMode)}
-        />
-        <div className="min-h-screen flex flex-col">
-          <HomePage />
-          <Footer />
+    <div className="flex justify-center">
+      <div className="w-full max-w-[1744px]">
+        <div className="flex-1 flex-col min-h-screen">
+          <div className="flex flex-col min-[1140px]:flex-row">
+            <HeaderLeft
+              darkMode={darkMode}
+              toggleDarkMode={() => setDarkMode(!darkMode)}
+            />
+            <div className="min-h-screen flex flex-col">
+              <HomePage />
+              <Footer />
+            </div>
+          </div>
+          <ScrollToTopButton />
         </div>
       </div>
-      <ScrollToTopButton />
     </div>
   );
 }
 
-// "use client";
-// import ScrollToTopButton from "@/components/ScrollToTopButton";
-// import HomePage from "./layout/HomePage";
-// import HeaderLeft from "./layout/HeaderLeft";
-// import {useState, useEffect} from "react";
-
-// export default function Home() {
-//   const [darkMode, setDarkMode] = useState(false);
-
-//   useEffect(() => {
-//     console.log("Dark mode:", darkMode);
-
-//     if (darkMode) {
-//       document.documentElement.classList.add("dark");
-//     } else {
-//       document.documentElement.classList.remove("dark");
-//     }
-//   }, [darkMode]);
-
-//   function toggleDarkMode() {
-//     setDarkMode((prev) => !prev);
-//   }
-
-//   return (
-//     <div className="flex flex-col lg:flex-row min-h-screen w-full subpixel-antialiase">
-//       <HeaderLeft darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-//       <HomePage />
-//       <ScrollToTopButton />
-//     </div>
-//   );
-// }
+{
+  /* <div className="flex flex-col min-h-screen">
+<div className="flex flex-col min-[1140px]:flex-row">
+  <HeaderLeft
+    darkMode={darkMode}
+    toggleDarkMode={() => setDarkMode(!darkMode)}
+  />
+  <div className="min-h-screen w-full max-w-[1744px] flex flex-col">
+    <HomePage />
+    <Footer />
+  </div>
+</div>
+<ScrollToTopButton />
+</div> */
+}

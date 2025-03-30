@@ -6,6 +6,7 @@ import {CiLinkedin} from "react-icons/ci";
 import {VscGithubAlt} from "react-icons/vsc";
 import {useState} from "react";
 import {motion} from "framer-motion";
+import {IoMoon} from "react-icons/io5";
 
 const hobbies = [
   "Brazilian Jiu-Jitsu",
@@ -63,9 +64,9 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
             onClick={toggleDarkMode}
           >
             {darkMode ? (
-              <LuSun className="text-2xl text-yellow-300" />
+              <LuSun className="text-2xl text-amber-300" />
             ) : (
-              <LuMoon className="text-2xl" />
+              <IoMoon className="text-2xl" />
             )}
           </motion.button>
         </div>

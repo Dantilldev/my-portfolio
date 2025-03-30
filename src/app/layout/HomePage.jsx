@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
-import {motion} from "framer-motion";
-import Footer from "@/components/Footer";
+// import {motion} from "framer-motion";
 import FlipCard from "@/components/FlipCard";
 
 const skillsData = [
@@ -19,10 +17,11 @@ const skillsData = [
 const projects = [
   {
     imageSrc: "/earth.jpg",
-    title: "Project 1",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus, ",
+    title: "🐉 Chase the Rabbit 🐇",
+    text: "A game where a dragon chases a rabbit to score points. Built with React, Next.js and TailwindCSS. Created with a classmate at Chas Academy.",
     gitHubLink: "https://github.com/Dantilldev/chase-the-rabbit",
-    techStack: ["HTML5", "TailwindCSS", "JavaScript"],
+    liveLink: "https://chase-the-rabbit-yvfw.vercel.app/",
+    techStack: ["HTML5", "TailwindCSS", "JavaScript", "React", "Next.js"],
   },
   {
     imageSrc: "/moon.jpg",
@@ -97,31 +96,11 @@ export default function HomePage() {
                 text={project.text}
                 techStack={project.techStack}
                 gitHubLink={project.gitHubLink}
+                liveLink={project.liveLink}
               />
             ))}
           </div>
         </section>
-        {/* <section className="flex flex-col justify-center items-center gap-5 mb-20 ">
-          <h1 className="text-4xl font-semibold text-center">Projects</h1>
-          <motion.div
-            initial={{opacity: 0, y: -20}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.5}}
-          >
-            <div className="grid md:grid-cols-2 2xl:grid-cols-4 justify-center items-center gap-10 ">
-              {projects.map((project, index) => (
-                <Cards
-                  key={index}
-                  imageSrc={project.imageSrc}
-                  title={project.title}
-                  text={project.text}
-                  techStack={project.techStack}
-                  gitHubLink={project.gitHubLink}
-                />
-              ))}
-            </div>
-          </motion.div>
-        </section> */}
 
         {/* CTA-Btn */}
         <div className="flex justify-center p-10">

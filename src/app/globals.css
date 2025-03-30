@@ -1,5 +1,16 @@
 @import "tailwindcss";
 /* https://www.youtube.com/watch?v=v_8CmC6cwUs */
+html {
+  scrollbar-width: normal;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
 
 body {
   font-family: var(--font-poppins), sans-serif;
@@ -12,28 +23,40 @@ body {
 
 /* Light Mode (default) */
 :root {
-  --bg-color: #f9fafb; /* Ljus bakgrund, nästan vit */
-  --text-color: #1f2937; /* Mörkblågrå text */
-  --primary-color: #3b82f6; /* Modern blå */
-  --secondary-color: #6b7280; /* Fräsch grön accent */
-  --border-color: #e5e7eb; /* Ljusgrå border */
+  --bg-color: #f8f9fc; /* Ljus, sofistikerad bakgrund */
+  --text-color: #111827; /* Djup, mörkblågrå text */
+  --primary-color: #2b3546; /* Elegant, mörkblå */
+  --secondary-color: #64748b; /* Dämpad, sofistikerad gråblå */
+  --border-color: #d1d5db; /* Ljus, subtil grå */
 
-  --hover-color: #dbeafe; /* Ljus blå hover-effekt */
-  --skills-bg: #c9c7bd; /* Guldgul för skills-sektion */
-  --card-bg: #ffffff; /* Vit kortbakgrund */
+  --hover-color: #1e3a8a; /* Djupare blå för hovring */
+  --skills-bg: #bda371; /* Mjuk silvergrå för skills */
 }
 
 /* Dark Mode */
 .dark {
-  --bg-color: #1f2937; /* Mörkblågrå bakgrund */
-  --text-color: #f9fafb; /* Nästan vit text */
-  --primary-color: #60a5fa; /* Ljusare blå för bättre synlighet */
-  --secondary-color: #6b7280; /* Ljusgrön accent */
-  --border-color: #374151; /* Mörkgrå border */
+  --bg-color: #111827; /* Djup, mörkblågrå bakgrund */
+  --text-color: #f8fafc; /* Nästan vit text */
+  --primary-color: #2f3646; /* Mörkare blå med elegans */
+  --secondary-color: #94a3b8; /* Mjukare gråblå */
+  --border-color: #374151; /* Dämpad mörkgrå */
 
-  --hover-color: #4b5563; /* Dämpad mörk hover-effekt */
-  --skills-bg: #514c3d; /* Mjuk gul för skills */
-  --card-bg: #374151; /* Mörkgrå kortbakgrund */
+  --hover-color: #172554; /* Djupare mörkblå för hovring */
+  --skills-bg: #374151; /* Dov gråblå för skills */
+
+  --extra: linear-gradient(
+    180deg,
+    rgba(4, 89, 84, 1) 0%,
+    rgba(51, 255, 243, 1) 82%
+  );
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--extra);
+}
+
+.primary-background-color {
+  background-color: var(--primary-color);
 }
 
 .secondary-color {
@@ -42,10 +65,9 @@ body {
 
 .skills-bg {
   background-color: var(--skills-bg);
+  color: var(--text-color);
 }
-.card-bg {
-  background-color: var(--card-bg);
-}
+
 .border {
   border-color: var(--border-color);
 }
