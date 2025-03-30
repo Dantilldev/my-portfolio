@@ -22,14 +22,14 @@ export default function Home() {
 
   return (
     <div className="flex-1 flex-col min-h-screen">
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col min-[1140px]:flex-row">
         <HeaderLeft
           darkMode={darkMode}
           toggleDarkMode={() => setDarkMode(!darkMode)}
         />
         <div className="min-h-screen flex flex-col">
           <HomePage />
-          <Footer /> {/* Footer will stay at the bottom now */}
+          <Footer />
         </div>
       </div>
       <ScrollToTopButton />

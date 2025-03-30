@@ -46,8 +46,8 @@ const projects = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex-3 flex-col ">
-      <main className="p-10">
+    <div className="min-h-screen flex-3">
+      <main className=" flex flex-col p-10">
         {/* About Me */}
         <section className="flex flex-col gap-5 mb-20">
           <h1 className="text-4xl font-semibold">About Me</h1>
