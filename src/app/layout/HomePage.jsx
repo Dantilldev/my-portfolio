@@ -63,7 +63,7 @@ export default function HomePage() {
 
         {/* Skills */}
         <section className="flex flex-col gap-5 mb-20 ">
-          <h1 className="text-4xl font-semibold">My Tech Toolbox</h1>
+          <h1 className="text-4xl font-semibold py-2">My Tech Toolbox</h1>
           <div className="flex flex-col gap-5">
             {skillsData.map((section, index) => (
               <div key={index} className="flex flex-col gap-2">
@@ -85,8 +85,8 @@ export default function HomePage() {
         </section>
 
         {/* Projects */}
-        <section className="flex flex-col justify-center items-center gap-5 mb-20">
-          <h1 className="text-4xl font-semibold text-center">Projects</h1>
+        <section className="flex flex-col justify-center items-center gap-5 mt-15">
+          <h1 className="text-4xl font-semibold text-center py-2">Projects</h1>
           <div className="grid md:grid-cols-2 2xl:grid-cols-4 justify-center items-center gap-10">
             {projects.map((project, index) => (
               <FlipCard
@@ -103,9 +103,9 @@ export default function HomePage() {
         </section>
 
         {/* CTA-Btn */}
-        <div className="flex justify-center p-10">
+        <div className="flex justify-center items-center mt-40 p-5">
           <section className="flex flex-col items-center gap-5 mb-10 w-[600px] p-4 ">
-            <h1 className="text-4xl font-semibold">Want to collabrate?</h1>
+            <h1 className="text-4xl font-semibold py-2">Want to collabrate?</h1>
 
             <a href="mailto:daniel.tilleria@hotmail.com">
               <button className="bg-[#A6A28B] border py-3 px-5 w-56 rounded-sm transform transition-all hover:scale-105">
