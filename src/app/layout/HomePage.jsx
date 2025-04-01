@@ -16,18 +16,12 @@ const skillsData = [
 
 const projects = [
   {
-    imageSrc: "/earth.jpg",
-    title: "🐉 Chase the Rabbit 🐇",
-    text: "A game where a dragon chases a rabbit to score points. Built with React, Next.js and TailwindCSS. Created with a classmate at Chas Academy.",
+    imageSrc: "/rabbit_chase.png",
+    title: " Chase the Rabbit🐉",
+    text: "Chase the Rabbit, a snake inspired desktop game made by me and a classmate. Collect points, unlock characters, and set new records.",
     gitHubLink: "https://github.com/Dantilldev/chase-the-rabbit",
     liveLink: "https://chase-the-rabbit-yvfw.vercel.app/",
     techStack: ["HTML5", "TailwindCSS", "JavaScript", "React", "Next.js"],
-  },
-  {
-    imageSrc: "/moon.jpg",
-    title: "Project 2",
-    text: "um et dui rhoncus, eget laoreet mi tincidunt.",
-    techStack: ["HTML5", "TailwindCSS", "JavaScript"],
   },
   {
     imageSrc: "/planet1.jpg",
@@ -36,10 +30,26 @@ const projects = [
     techStack: ["HTML5", "TailwindCSS", "JavaScript"],
   },
   {
-    imageSrc: "/planet2.jpg",
-    title: "Project 4",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus, eget laoreet mi tincidunt.",
-    techStack: ["HTML5", "TailwindCSS", "JavaScript"],
+    imageSrc: "/todo.png",
+    title: "Todo App 📋",
+    text: "A simple todo app built with Vite, React, and TailwindCSS, focusing on implementing CRUD operations (Create, Read, Update, Delete).",
+    gitHubLink: "https://github.com/Dantilldev/workshop-todoApp",
+    liveLink: "https://workshop-todo-app.vercel.app/",
+    techStack: ["Vite", "TailwindCSS", "CRUD"],
+  },
+  {
+    imageSrc: "/pokedex.png",
+    title: "Pokémon 👾",
+    text: "Built with Next.js in a team project, this Pokédex lets users explore Pokémon, search by name or ID, and bookmark favorites. The app features a responsive design and type-based browsing. I worked on the Pokémon details and front page and contributed to the Context API for data management.",
+    gitHubLink: "https://github.com/Dantilldev/chas_pokemon-main",
+    liveLink: "https://chas-pokemon-main.vercel.app/",
+    techStack: [
+      "Next.js",
+      "TailwindCSS",
+      "PokemonAPI",
+      "Context API",
+      "Routing",
+    ],
   },
 ];
 

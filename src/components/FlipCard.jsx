@@ -10,7 +10,7 @@ export default function FlipCard({
   gitHubLink,
   liveLink,
 }) {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(true);
 
   function handleFlip() {
     setIsFlipped(!isFlipped);
@@ -39,13 +39,13 @@ export default function FlipCard({
 
         {/* BakSida */}
         <div className="w-full h-full primary-background-color text-white shadow-lg rounded-3xl flex flex-col justify-start  [transform:rotateY(180deg)] [backface-visibility:hidden]">
-          <h3 className="text-2xl text-center w-full mt-5">{title}</h3>{" "}
-          <p className="flex items-center text-center p-2 h-45">{text}</p>
-          <div className="flex flex-wrap gap-2 p-2 mt-5">
+          <h3 className="text-2xl text-center w-full mt-2 mb-2">{title}</h3>{" "}
+          <p className="flex items-center text-center p-2 h-55">{text}</p>
+          <div className="flex flex-wrap gap-2 p-2 mt-2">
             {techStack.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 text-sm skills-bg rounded-full"
+                className="px-3 mt-1 text-sm skills-bg rounded-full"
               >
                 {tech}
               </span>
