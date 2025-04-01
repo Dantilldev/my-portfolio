@@ -10,7 +10,7 @@ export default function FlipCard({
   gitHubLink,
   liveLink,
 }) {
-  const [isFlipped, setIsFlipped] = useState(true);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   function handleFlip() {
     setIsFlipped(!isFlipped);

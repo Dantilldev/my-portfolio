@@ -24,11 +24,14 @@ const projects = [
     techStack: ["HTML5", "TailwindCSS", "JavaScript", "React", "Next.js"],
   },
   {
-    imageSrc: "/planet1.jpg",
-    title: "Project 3",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus, eget laoreet mi tincidunt.",
-    techStack: ["HTML5", "TailwindCSS", "JavaScript"],
+    imageSrc: "/ai.png",
+    title: "Ai Translate & chatbot 🤖",
+    text: "Chase the Rabbit, a snake inspired desktop game made by me and a classmate. Collect points, unlock characters, and set new records.",
+    gitHubLink: "https://github.com/Dantilldev/ai-translate",
+    liveLink: "https://ai-translate-e3md.vercel.app/",
+    techStack: ["HTML5", "TailwindCSS", "JavaScript", "React", "Next.js"],
   },
+
   {
     imageSrc: "/todo.png",
     title: "Todo App 📋",
