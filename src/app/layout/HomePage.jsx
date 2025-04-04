@@ -44,7 +44,7 @@ const projects = [
   {
     imageSrc: "/pokedex.png",
     title: "Pokémon 👾",
-    text: "Built with Next.js in a team project, this Pokédex lets users explore Pokémon, search by name or ID, and bookmark favorites. The app features a responsive design and type-based browsing. I worked on the Pokémon details and front page and contributed to the Context API for data management.",
+    text: "Built with Next.js in a team project, this Pokédex lets users explore Pokémons, search by name or ID(max1000), and bookmark favorites. I worked on the Pokémon details, front page, and contributed to the Context API for data management.",
     gitHubLink: "https://github.com/Dantilldev/chas_pokemon-main",
     liveLink: "https://chas-pokemon-main.vercel.app/",
     techStack: [
