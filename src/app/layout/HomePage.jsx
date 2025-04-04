@@ -59,11 +59,10 @@ const projects = [
 
 export default function HomePage() {
   const text =
-    "A frontend developer who creates web and mobile apps with some backend capability. Currently studying at Chas Academy in Stockholm to improve my skills. I am a motivated and curious problem-solver who enjoys working in teams to tackle challenges and create meaningful solutions. When I am not coding, I practice Brazilian Jiu-Jitsu which helps me stay focused and motivated as I grow as a developer.";
+    "A  frontend developer who creates web and mobile apps with some backend capability. Currently studying at Chas Academy in Stockholm to improve my skills. I am a motivated and curious problem-solver who enjoys working in teams to tackle challenges and create meaningful solutions. When I am not coding, I practice Brazilian Jiu-Jitsu which helps me stay focused and motivated as I grow as a developer.";
 
   const [displayText, setDisplayText] = useState("");
 
-  // Effekten kommer att köras bokstav för bokstav
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
@@ -71,12 +70,13 @@ export default function HomePage() {
         setDisplayText((prev) => prev + text[index]);
         index++;
       } else {
-        clearInterval(interval); // Stoppa intervallet när hela texten har visats
+        clearInterval(interval);
       }
     }, 10);
 
     return () => clearInterval(interval);
   }, []);
+
   return (
     <div className="min-h-screen flex-3">
       <main className=" flex flex-col p-10">
@@ -122,7 +122,7 @@ export default function HomePage() {
         </section>
 
         {/* Projects */}
-        <section className="flex flex-col justify-center items-center gap-5 mt-15">
+        <section className="flex flex-col justify-center items-center gap-5 mt-15 ">
           <h1 className="text-4xl font-semibold text-center py-2">Projects</h1>
           <div className="grid md:grid-cols-2 2xl:grid-cols-4 justify-center items-center gap-10">
             {projects.map((project, index) => (
@@ -145,7 +145,7 @@ export default function HomePage() {
             <h1 className="text-4xl font-semibold py-2">Let's Connect</h1>
 
             <a href="mailto:daniel.tilleria@hotmail.com">
-              <button className="relative border-2 py-3 px-5 h-52 w-52 rounded-full group transition-all duration-300 transform hover:scale-75">
+              <button className="relative border-2 py-3 px-5 h-52 w-52 rounded-full group transition-all duration-600 transform hover:scale-75">
                 <span className="relative z-10">Write a message</span>
               </button>
             </a>

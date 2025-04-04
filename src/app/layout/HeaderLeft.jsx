@@ -66,7 +66,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
             onClick={toggleDarkMode}
           >
             {darkMode ? (
-              <LuSun className="text-2xl text-amber-300" />
+              <LuSun className="text-2xl text-cyan-300" />
             ) : (
               <IoMoon className="text-2xl" />
             )}

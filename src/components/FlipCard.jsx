@@ -29,7 +29,7 @@ export default function FlipCard({
         }`}
       >
         {/* FramSida */}
-        <div className="absolute w-full h-full bg-white shadow-lg rounded-3xl flex flex-col items-center justify-center [backface-visibility:hidden]">
+        <div className="absolute w-full h-full bg-white shadow-lg rounded-3xl flex flex-col items-center justify-center [backface-visibility:hidden] border-4 border-cyan-300">
           <img
             className="w-full h-full object-cover rounded-3xl"
             src={imageSrc}
