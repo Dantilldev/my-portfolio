@@ -1,4 +1,5 @@
 "use client";
+import {useState, useEffect} from "react";
 import React from "react";
 // import {motion} from "framer-motion";
 import FlipCard from "@/components/FlipCard";
@@ -57,11 +58,33 @@ const projects = [
 ];
 
 export default function HomePage() {
+  const text =
+    "A frontend developer who creates web and mobile apps with some backend capability. Currently studying at Chas Academy in Stockholm to improve my skills. I am a motivated and curious problem-solver who enjoys working in teams to tackle challenges and create meaningful solutions. When I am not coding, I practice Brazilian Jiu-Jitsu which helps me stay focused and motivated as I grow as a developer.";
+
+  const [displayText, setDisplayText] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < text.length) {
+        setDisplayText((prev) => prev + text[index]);
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 10);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="min-h-screen flex-3">
       <main className=" flex flex-col p-10">
         {/* About Me */}
         <section className="flex flex-col gap-5 mb-20">
+          <h1 className="text-4xl font-semibold">About Me</h1>
+          <p className="text-lg font-mono">{displayText}</p>
+        </section>
+        {/* <section className="flex flex-col gap-5 mb-20">
           <h1 className="text-4xl font-semibold">About Me</h1>
           <p className="text-lg font-mono">
             A frontend developer who creates web and mobile apps with some
@@ -72,7 +95,7 @@ export default function HomePage() {
             Jiu-Jitsu which helps me stay focused and motivated as I grow as a
             developer.
           </p>
-        </section>
+        </section> */}
 
         {/* Skills */}
         <section className="flex flex-col gap-5 mb-20 ">
@@ -118,11 +141,12 @@ export default function HomePage() {
         {/* CTA-Btn */}
         <div className="flex justify-center items-center mt-40 p-5">
           <section className="flex flex-col items-center gap-5 mb-10 w-[600px] p-4 ">
-            <h1 className="text-4xl font-semibold py-2">Want to collabrate?</h1>
+            <h1 className="text-4xl font-semibold py-2">Let's Connect</h1>
 
             <a href="mailto:daniel.tilleria@hotmail.com">
-              <button className="bg-[#A6A28B] border py-3 px-5 w-56 rounded-sm transform transition-all hover:scale-105">
-                Open mail
+              <button className="relative border-2 py-3 px-5 h-52 w-52 rounded-full overflow-hidden group">
+                <span className="relative z-10">Write a message</span>
+                <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle,_#A6A28B,_transparent)] scale-0 group-hover:scale-150 transition-transform duration-500 ease-initial"></span>
               </button>
             </a>
           </section>
@@ -131,3 +155,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+// bg-[#A6A28B]
