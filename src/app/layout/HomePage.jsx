@@ -63,6 +63,7 @@ export default function HomePage() {
 
   const [displayText, setDisplayText] = useState("");
 
+  // Effekten kommer att köras bokstav för bokstav
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
@@ -70,7 +71,7 @@ export default function HomePage() {
         setDisplayText((prev) => prev + text[index]);
         index++;
       } else {
-        clearInterval(interval);
+        clearInterval(interval); // Stoppa intervallet när hela texten har visats
       }
     }, 10);
 
@@ -144,9 +145,8 @@ export default function HomePage() {
             <h1 className="text-4xl font-semibold py-2">Let's Connect</h1>
 
             <a href="mailto:daniel.tilleria@hotmail.com">
-              <button className="relative border-2 py-3 px-5 h-52 w-52 rounded-full overflow-hidden group">
+              <button className="relative border-2 py-3 px-5 h-52 w-52 rounded-full group transition-all duration-300 transform hover:scale-75">
                 <span className="relative z-10">Write a message</span>
-                <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle,_#A6A28B,_transparent)] scale-0 group-hover:scale-150 transition-transform duration-500 ease-initial"></span>
               </button>
             </a>
           </section>

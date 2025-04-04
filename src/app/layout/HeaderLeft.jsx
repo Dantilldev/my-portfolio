@@ -46,14 +46,16 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
     <div className="flex-1 min-h-screen w-full p-10 relative sm:border-r">
       <div className="flex flex-col gap-5">
         <div className="flex flex-col items-center justify-center gap-5">
-          <img
-            src="/me.jpeg"
-            alt="I'ts me Daniel"
-            className="w-auto h-48 rounded-full object-cover border-4"
-          />
+          <div className="perspective-3d">
+            <img
+              src="/me.jpeg"
+              alt="It's me Daniel"
+              className="w-auto h-48 rounded-full object-cover border-4 float"
+            />
+          </div>
 
           <div className="text-center space-y-1">
-            <h1 className="text-4xl font-extralight ">
+            <h1 className="text-4xl font-extralight">
               Daniel <span className="font-semibold">Tilleria</span>
             </h1>
             <h3 className="text-lg">Web Developer</h3>
@@ -73,19 +75,29 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
         {/* Contact */}
         <div className=" flex flex-col items-start justify-start border-b p-5">
           <ul className=" space-y-3">
-            <li className="flex items-center gap-2">
+            <motion.li
+              initial={{opacity: 0, x: -20}}
+              animate={{opacity: 1, x: 0}}
+              transition={{delay: 0.2, duration: 0.8}}
+              className="flex items-center gap-2"
+            >
               <IoLocationOutline className="text-2xl" />
               <span className="text-lg">Stockholm</span>
-            </li>
+            </motion.li>
             {showTooltip && (
               <div
                 className="bg-[var(--hover-color) absolute top-93 left-70 px-2 bg-black text-white rounded-sm after:absolute after:bottom-[-5px] after:left-1/2 after:-translate-x-1/2
                 after:border-x-6 after:border-t-6 after:border-transparent after:border-t-black "
               >
-                Copy
+                <span className="text-sm">Click to copy</span>
               </div>
             )}
-            <li className="flex items-center gap-2">
+            <motion.li
+              initial={{opacity: 0, x: -20}}
+              animate={{opacity: 1, x: 0}}
+              transition={{delay: 0.2, duration: 0.8}}
+              className="flex items-center gap-2"
+            >
               <button
                 onClick={handleCopyEmail}
                 className="text-lg flex items-center gap-2"
@@ -96,11 +108,16 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
                 <MdOutlineEmail className="text-2xl " />
                 daniel.tilleria@hotmail.com
               </button>
-            </li>
-            <li className="flex items-center gap-2">
+            </motion.li>
+            <motion.li
+              initial={{opacity: 0, x: -20}}
+              animate={{opacity: 1, x: 0}}
+              transition={{delay: 0.2, duration: 0.8}}
+              className="flex items-center gap-2"
+            >
               <IoCallOutline className="text-2xl" />
-              <span className="text-lg">07-232-323-32</span>
-            </li>
+              <span className="text-lg">076 078 46 69</span>
+            </motion.li>
           </ul>
         </div>
         {/* Social */}
@@ -110,10 +127,13 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
 
           <ul className="space-y-3">
             <motion.li
+              initial={{opacity: 0, x: -20}}
+              animate={{opacity: 1, x: 0}}
+              transition={{delay: 0.2, duration: 0.8}}
               whileHover={{
                 y: -2, // Rörelse uppåt vid hover
                 scale: 1.05, // Gör länken lite större
-                transition: {type: "spring", stiffness: 300, damping: 10}, // Justera transitionen för mer "bounce"
+                transition: {type: "spring", stiffness: 300, damping: 10},
               }}
               className="flex items-center gap-2"
             >
@@ -128,6 +148,9 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
               </a>
             </motion.li>
             <motion.li
+              initial={{opacity: 0, x: -20}}
+              animate={{opacity: 1, x: 0}}
+              transition={{delay: 0.2, duration: 0.8}}
               whileHover={{
                 y: -2, // Rörelse uppåt vid hover
                 scale: 1.05, // Gör länken lite större
@@ -150,26 +173,21 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
         {/* Education */}
         <div className="flex flex-col items-start justify-start gap-5 border-b p-5 ">
           <h1 className="font-semibold text-2xl">EDUCATION</h1>
-          <motion.ul
-            className="flex flex-col gap-5"
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{duration: 1}}
-          >
+          <ul className="flex flex-col gap-5">
             {education.map((item, index) => (
               <motion.li
                 key={index}
                 className="relative flex flex-col gap-1 border-l p-6 before:absolute before:left-[-6px] before:top-1/2 before:h-3 before:w-3 before:-translate-y-1/2 before:rounded-full before:transform before:bg-[var(--text-color)]"
-                initial={{opacity: 0, x: -20}}
-                animate={{opacity: 1, x: 0}}
-                transition={{delay: index * 0.2, duration: 0.8}}
+                initial={{opacity: 0, x: -20}} // Initial position
+                animate={{opacity: 1, x: 0}} // Animate to final position
+                transition={{delay: index * 0.2, duration: 0.8}} // Delay
               >
                 <span className="font-semibold md:text-lg">{item.title}</span>
                 <span className="font-light">{item.school}</span>
                 <span className="text-sm">{item.year}</span>
               </motion.li>
             ))}
-          </motion.ul>
+          </ul>
         </div>
 
         {/* Hobbies */}
