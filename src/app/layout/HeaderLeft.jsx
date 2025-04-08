@@ -38,7 +38,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
   const [showTooltip, setShowTooltip] = useState(false);
 
   function handleCopyEmail() {
-    const email = "daniel.tilleria@hotmail.com"; //
+    const email = "daniel.tilleria@hotmail.com";
     navigator.clipboard.writeText(email);
   }
 

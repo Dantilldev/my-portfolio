@@ -59,33 +59,33 @@ const projects = [
 
 export default function HomePage() {
   const text =
-    "A  frontend developer who creates web and mobile apps with some backend capability. Currently studying at Chas Academy in Stockholm to improve my skills. I am a motivated and curious problem-solver who enjoys working in teams to tackle challenges and create meaningful solutions. When I am not coding, I practice Brazilian Jiu-Jitsu which helps me stay focused and motivated as I grow as a developer.";
+    "A frontend developer who creates web and mobile apps with some backend capability. Currently studying at Chas Academy in Stockholm to improve my skills. I am a motivated and curious problem-solver who enjoys working in teams to tackle challenges and create meaningful solutions. When I am not coding, I practice Brazilian Jiu-Jitsu which helps me stay focused and motivated as I grow as a developer.";
 
   const [displayText, setDisplayText] = useState("");
 
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < text.length) {
-        setDisplayText((prev) => prev + text[index]);
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 10);
+  // useEffect(() => {
+  //   let index = 0;
+  //   const interval = setInterval(() => {
+  //     if (index < text.length) {
+  //       setDisplayText((prev) => prev + text[index]);
+  //       index++;
+  //     } else {
+  //       clearInterval(interval);
+  //     }
+  //   }, 10);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div className="min-h-screen flex-3">
       <main className=" flex flex-col p-10">
         {/* About Me */}
-        <section className="flex flex-col gap-5 mb-20">
+        {/* <section className="flex flex-col gap-5 mb-20">
           <h1 className="text-4xl font-semibold">About Me</h1>
           <p className="text-lg font-mono">{displayText}</p>
-        </section>
-        {/* <section className="flex flex-col gap-5 mb-20">
+        </section> */}
+        <section className="flex flex-col gap-5 mb-20">
           <h1 className="text-4xl font-semibold">About Me</h1>
           <p className="text-lg font-mono">
             A frontend developer who creates web and mobile apps with some
@@ -96,7 +96,7 @@ export default function HomePage() {
             Jiu-Jitsu which helps me stay focused and motivated as I grow as a
             developer.
           </p>
-        </section> */}
+        </section>
 
         {/* Skills */}
         <section className="flex flex-col gap-5 mb-20 ">

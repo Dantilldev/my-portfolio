@@ -21,7 +21,7 @@ export default function Home() {
   }, [darkMode]);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center duration-1000">
       <div className="w-full max-w-[1744px]">
         <div className="flex-1 flex-col min-h-screen">
           <div className="flex flex-col min-[1140px]:flex-row">
