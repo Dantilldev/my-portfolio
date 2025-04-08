@@ -1,7 +1,6 @@
 "use client";
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import React from "react";
-// import {motion} from "framer-motion";
 import FlipCard from "@/components/FlipCard";
 
 const skillsData = [
@@ -17,7 +16,7 @@ const skillsData = [
 
 const projects = [
   {
-    imageSrc: "/rabbit_chase.png",
+    imageSrc: "/planet1.jpg",
     title: " Chase the Rabbit🐉",
     text: "Chase the Rabbit, a snake inspired desktop game made by me and a classmate. Collect points, unlock characters, and set new records.",
     gitHubLink: "https://github.com/Dantilldev/chase-the-rabbit",
@@ -25,16 +24,15 @@ const projects = [
     techStack: ["HTML5", "TailwindCSS", "JavaScript", "React", "Next.js"],
   },
   {
-    imageSrc: "/ai.png",
+    imageSrc: "/planet2.jpg",
     title: "Ai Translate & chatbot 🤖",
-    text: "Chase the Rabbit, a snake inspired desktop game made by me and a classmate. Collect points, unlock characters, and set new records.",
-    gitHubLink: "https://github.com/Dantilldev/ai-translate",
+    text: "I developed two separate features with React. A translation tool and a chatbot, both powered by Gemini. The translation handles multiple language options, while the chatbot provides AI generated replies.",
     liveLink: "https://ai-translate-e3md.vercel.app/",
     techStack: ["HTML5", "TailwindCSS", "JavaScript", "React", "Next.js"],
   },
 
   {
-    imageSrc: "/todo.png",
+    imageSrc: "/planet3.jpg",
     title: "Todo App 📋",
     text: "A simple todo app built with Vite, React, and TailwindCSS, focusing on implementing CRUD operations (Create, Read, Update, Delete).",
     gitHubLink: "https://github.com/Dantilldev/workshop-todoApp",
@@ -42,7 +40,7 @@ const projects = [
     techStack: ["Vite", "TailwindCSS", "CRUD"],
   },
   {
-    imageSrc: "/pokedex.png",
+    imageSrc: "/planet4.jpg",
     title: "Pokémon 👾",
     text: "Built with Next.js in a team project, this Pokédex lets users explore Pokémons, search by name or ID(max1000), and bookmark favorites. I worked on the Pokémon details, front page, and contributed to the Context API for data management.",
     gitHubLink: "https://github.com/Dantilldev/chas_pokemon-main",
@@ -99,18 +97,21 @@ export default function HomePage() {
         </section>
 
         {/* Skills */}
-        <section className="flex flex-col gap-5 mb-20 ">
-          <h1 className="text-4xl font-semibold py-2">My Tech Toolbox</h1>
-          <div className="flex flex-col gap-5">
-            {skillsData.map((section, index) => (
-              <div key={index} className="flex flex-col gap-2">
-                <h2 className="text-2xl font-semibold">{section.category}</h2>
+        <section className="flex flex-col gap-6 mb-20 px-0 max-w-full">
+          <h1 className="text-4xl font-bold py-3 ">My Tech Toolbox </h1>
 
-                <ul className="flex flex-wrap gap-5">
+          <div className="flex flex-col gap-8">
+            {skillsData.map((section, index) => (
+              <div key={index} className="flex flex-col gap-3">
+                <h2 className="text-2xl font-semibold border-b pb-2">
+                  {section.category}
+                </h2>
+
+                <ul className="flex flex-wrap gap-3">
                   {section.skills.map((skill, skillIndex) => (
                     <li
                       key={skillIndex}
-                      className=" py-1 px-4 rounded-4xl text-lg skills-bg "
+                      className="py-2 px-4 rounded-full text-gray-20 border skills-border shadow-sm flex items-center"
                     >
                       {skill}
                     </li>
@@ -140,7 +141,7 @@ export default function HomePage() {
         </section>
 
         {/* CTA-Btn */}
-        <div className="flex justify-center items-center mt-40 p-5">
+        <div className="flex justify-center items-center mt-15 p-5">
           <section className="flex flex-col items-center gap-5 mb-10 w-[600px] p-4 ">
             <h1 className="text-4xl font-semibold py-2">Let's Connect</h1>
 

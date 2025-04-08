@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* https://www.youtube.com/watch?v=v_8CmC6cwUs */
+
 html {
   scrollbar-width: normal;
 }
@@ -21,54 +21,51 @@ body {
   color: var(--text-color);
 }
 
-/* Light Mode (default) */
+/* Light Mode */
 :root {
-  --bg-color: #f8f9fc; /* Ljus, sofistikerad bakgrund */
-  --text-color: #111827; /* Djup, mörkblågrå text */
-  --primary-color: #2b3546; /* Elegant, mörkblå */
-  --secondary-color: #64748b; /* Dämpad, sofistikerad gråblå */
-  --border-color: #d1d5db; /* Ljus, subtil grå */
-
-  --hover-color: #1e3a8a; /* Djupare blå för hovring */
-  --skills-bg: #bda371; /* Mjuk silvergrå för skills */
+  --bg-color: #eff1f0;
+  --text-color: #863e14;
+  --primary-color: #2b3546;
+  --secondary-color: #64748b;
+  --border-color: #903e04;
+  --hover-color: #1e3a8a;
+  --skills-bg: #bda371;
+  --card-border: #903e04;
+  /* --scroll: red; */
+  --card-bg: #903e04;
 }
 
 /* Dark Mode */
 .dark {
-  --bg-color: #111827; /* Djup, mörkblågrå bakgrund */
-  --text-color: #f8fafc; /* Nästan vit text */
-  --primary-color: #2f3646; /* Mörkare blå med elegans */
-  --secondary-color: #94a3b8; /* Mjukare gråblå */
-  --border-color: #374151; /* Dämpad mörkgrå */
-
-  --hover-color: #172554; /* Djupare mörkblå för hovring */
-  --skills-bg: #374151; /* Dov gråblå för skills */
-
-  --extra: linear-gradient(
+  --bg-color: #1f2739;
+  --text-color: #bec7c5;
+  --primary-color: #2f3646;
+  --secondary-color: #94a3b8;
+  --border-color: #0fc2e2;
+  --hover-color: #172554;
+  --skills-bg: #374151;
+  --scroll: linear-gradient(
     180deg,
     rgba(4, 89, 84, 1) 0%,
     rgba(51, 255, 243, 1) 82%
   );
+  --card-border: #67e8f9;
+  --card-bg: #035960;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: var(--extra);
+  background: var(--scroll);
 }
 
-.primary-background-color {
-  background-color: var(--primary-color);
+.card-bg {
+  background-color: var(--card-bg);
 }
 
 .secondary-color {
   color: var(--secondary-color);
 }
 
-.skills-bg {
-  background-color: var(--skills-bg);
-  color: var(--text-color);
-}
-
-.border {
+.skills-border {
   border-color: var(--border-color);
 }
 
@@ -124,4 +121,29 @@ button {
   display: flex;
   width: max-content;
   animation: scroll 30s linear infinite;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.animate-marquee-left {
+  animation: marquee-left 30s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 30s linear infinite;
 }
