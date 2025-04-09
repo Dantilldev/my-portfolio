@@ -53,6 +53,13 @@ body {
   --card-bg: #035960;
 }
 
+.bg-gradient-right {
+  background: linear-gradient(to right, var(--bg-color), transparent);
+}
+.bg-gradient-left {
+  background: linear-gradient(to left, var(--bg-color), transparent);
+}
+
 .dark ::-webkit-scrollbar-thumb {
   background: var(--scroll);
 }
@@ -146,4 +153,30 @@ button {
 
 .animate-marquee-right {
   animation: marquee-right 30s linear infinite;
+}
+
+/* SKILLS */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-container1,
+.scroll-container2 {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.scroll-container2 {
+  animation-direction: reverse;
+}
+
+.hover-pause:hover .scroll-container1,
+.hover-pause:hover .scroll-container2 {
+  animation-play-state: paused;
 }

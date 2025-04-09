@@ -1,18 +1,19 @@
 "use client";
-import {useState} from "react";
+
 import React from "react";
 import FlipCard from "@/components/FlipCard";
+import SkillsSection from "@/components/SkillSection";
 
-const skillsData = [
-  {
-    category: "Frontend",
-    skills: ["HTML5", "TailwindCSS", "JavaScript", "React", "Next.js"],
-  },
-  {
-    category: "Backend",
-    skills: ["Node.js", "Express", "MySQL"],
-  },
-];
+// const skillsData = [
+//   {
+//     category: "Frontend",
+//     skills: ["HTML5", "TailwindCSS", "JavaScript", "React", "Next.js"],
+//   },
+//   {
+//     category: "Backend",
+//     skills: ["Node.js", "Express", "MySQL"],
+//   },
+// ];
 
 const projects = [
   {
@@ -56,33 +57,10 @@ const projects = [
 ];
 
 export default function HomePage() {
-  const text =
-    "A frontend developer who creates web and mobile apps with some backend capability. Currently studying at Chas Academy in Stockholm to improve my skills. I am a motivated and curious problem-solver who enjoys working in teams to tackle challenges and create meaningful solutions. When I am not coding, I practice Brazilian Jiu-Jitsu which helps me stay focused and motivated as I grow as a developer.";
-
-  const [displayText, setDisplayText] = useState("");
-
-  // useEffect(() => {
-  //   let index = 0;
-  //   const interval = setInterval(() => {
-  //     if (index < text.length) {
-  //       setDisplayText((prev) => prev + text[index]);
-  //       index++;
-  //     } else {
-  //       clearInterval(interval);
-  //     }
-  //   }, 10);
-
-  //   return () => clearInterval(interval);
-  // }, []);
-
   return (
     <div className="min-h-screen flex-3">
       <main className=" flex flex-col p-10">
         {/* About Me */}
-        {/* <section className="flex flex-col gap-5 mb-20">
-          <h1 className="text-4xl font-semibold">About Me</h1>
-          <p className="text-lg font-mono">{displayText}</p>
-        </section> */}
         <section className="flex flex-col gap-5 mb-20">
           <h1 className="text-4xl font-semibold">About Me</h1>
           <p className="text-lg font-mono">
@@ -90,14 +68,14 @@ export default function HomePage() {
             backend capability. Currently studying at Chas Academy in Stockholm
             to improve my skills. I am a motivated and curious problem-solver
             who enjoys working in teams to tackle challenges and create
-            meaningful solutions. When I am not coding, I practice Brazilian
-            Jiu-Jitsu which helps me stay focused and motivated as I grow as a
-            developer.
+            solutions. When I am not coding, I practice Brazilian Jiu-Jitsu
+            which helps me stay focused and motivated as I grow as a developer.
           </p>
         </section>
 
+        <SkillsSection />
         {/* Skills */}
-        <section className="flex flex-col gap-6 mb-20 px-0 max-w-full">
+        {/* <section className="flex flex-col gap-6 mb-20 px-0 max-w-full">
           <h1 className="text-4xl font-bold py-3 ">My Tech Toolbox </h1>
 
           <div className="flex flex-col gap-8">
@@ -120,11 +98,11 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Projects */}
         <section className="flex flex-col justify-center items-center gap-5 mt-15 ">
-          <h1 className="text-4xl font-semibold text-center py-2">Projects</h1>
+          <h1 className="text-4xl font-semibold  py-2">Projects</h1>
           <div className="grid md:grid-cols-2 2xl:grid-cols-4 justify-center items-center gap-10">
             {projects.map((project, index) => (
               <FlipCard

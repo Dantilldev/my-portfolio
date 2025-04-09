@@ -43,7 +43,12 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
   }
 
   return (
-    <div className="flex-1 min-h-screen w-full p-10 relative sm:border-r">
+    <motion.div
+      initial={{opacity: 0, x: -20}}
+      animate={{opacity: 1, x: 0}}
+      transition={{delay: 0.2, duration: 0.8}}
+      className="flex-1 min-h-screen w-full p-10 relative sm:border-r"
+    >
       <div className="flex flex-col gap-5">
         <div className="flex flex-col items-center justify-center gap-5">
           <div className="perspective-3d">
@@ -75,15 +80,10 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
         {/* Contact */}
         <div className=" flex flex-col items-start justify-start border-b p-5">
           <ul className=" space-y-3">
-            <motion.li
-              initial={{opacity: 0, x: -20}}
-              animate={{opacity: 1, x: 0}}
-              transition={{delay: 0.2, duration: 0.8}}
-              className="flex items-center gap-2"
-            >
+            <li className="flex items-center gap-2">
               <IoLocationOutline className="text-2xl" />
               <span className="text-lg">Stockholm</span>
-            </motion.li>
+            </li>
             {showTooltip && (
               <div
                 className="bg-[var(--hover-color) absolute top-93 left-70 px-2 bg-black text-white rounded-sm after:absolute after:bottom-[-5px] after:left-1/2 after:-translate-x-1/2
@@ -92,12 +92,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
                 <span className="text-sm">Click to copy</span>
               </div>
             )}
-            <motion.li
-              initial={{opacity: 0, x: -20}}
-              animate={{opacity: 1, x: 0}}
-              transition={{delay: 0.2, duration: 0.8}}
-              className="flex items-center gap-2"
-            >
+            <li className="flex items-center gap-2">
               <button
                 onClick={handleCopyEmail}
                 className="text-lg flex items-center gap-2"
@@ -108,7 +103,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
                 <MdOutlineEmail className="text-2xl " />
                 daniel.tilleria@hotmail.com
               </button>
-            </motion.li>
+            </li>
             <motion.li
               initial={{opacity: 0, x: -20}}
               animate={{opacity: 1, x: 0}}
@@ -122,7 +117,12 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
         </div>
         {/* Social */}
 
-        <div className="flex flex-col items-start justify-start border-b p-5 gap-5">
+        <motion.div
+          initial={{opacity: 0, x: -20}}
+          animate={{opacity: 1, x: 0}}
+          transition={{delay: 0.2, duration: 0.8}}
+          className="flex flex-col items-start justify-start border-b p-5 gap-5"
+        >
           <h1 className="font-semibold text-2xl ">SOCIAL</h1>
 
           <ul className="space-y-3">
@@ -169,7 +169,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
               </a>
             </motion.li>
           </ul>
-        </div>
+        </motion.div>
         {/* Education */}
         <div className="flex flex-col items-start justify-start gap-5 border-b p-5 ">
           <h1 className="font-semibold text-2xl">EDUCATION</h1>
@@ -211,6 +211,6 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
