@@ -38,8 +38,8 @@ const education = [
 ];
 
 export default function HeaderLeft({darkMode, toggleDarkMode}) {
-  const [showTooltip, setShowTooltip] = useState(true);
-  const [showTooltip2, setShowTooltip2] = useState(true);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [showTooltip2, setShowTooltip2] = useState(false);
 
   function handleCopyEmail() {
     const email = "daniel.tilleria@hotmail.com";
