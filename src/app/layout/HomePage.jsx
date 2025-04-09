@@ -4,22 +4,11 @@ import React from "react";
 import FlipCard from "@/components/FlipCard";
 import SkillsSection from "@/components/SkillSection";
 
-// const skillsData = [
-//   {
-//     category: "Frontend",
-//     skills: ["HTML5", "TailwindCSS", "JavaScript", "React", "Next.js"],
-//   },
-//   {
-//     category: "Backend",
-//     skills: ["Node.js", "Express", "MySQL"],
-//   },
-// ];
-
 const projects = [
   {
     imageSrc: "/planet1.jpg",
     title: " Chase the Rabbit🐉",
-    text: "Chase the Rabbit, a snake inspired desktop game made by me and a classmate. Collect points, unlock characters, and set new records.",
+    text: "This is a snake inspired desktop game. Collect points, unlock characters, and set new records.",
     gitHubLink: "https://github.com/Dantilldev/chase-the-rabbit",
     liveLink: "https://chase-the-rabbit-yvfw.vercel.app/",
     techStack: ["HTML5", "TailwindCSS", "JavaScript", "React", "Next.js"],
@@ -63,7 +52,7 @@ export default function HomePage() {
         {/* About Me */}
         <section className="flex flex-col gap-5 mb-20">
           <h1 className="text-4xl font-semibold">About Me</h1>
-          <p className="text-lg font-mono">
+          <p className="text-lg ">
             A frontend developer who creates web and mobile apps with some
             backend capability. Currently studying at Chas Academy in Stockholm
             to improve my skills. I am a motivated and curious problem-solver
@@ -73,32 +62,8 @@ export default function HomePage() {
           </p>
         </section>
 
-        <SkillsSection />
         {/* Skills */}
-        {/* <section className="flex flex-col gap-6 mb-20 px-0 max-w-full">
-          <h1 className="text-4xl font-bold py-3 ">My Tech Toolbox </h1>
-
-          <div className="flex flex-col gap-8">
-            {skillsData.map((section, index) => (
-              <div key={index} className="flex flex-col gap-3">
-                <h2 className="text-2xl font-semibold border-b pb-2">
-                  {section.category}
-                </h2>
-
-                <ul className="flex flex-wrap gap-3">
-                  {section.skills.map((skill, skillIndex) => (
-                    <li
-                      key={skillIndex}
-                      className="py-2 px-4 rounded-full text-gray-20 border skills-border shadow-sm flex items-center"
-                    >
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section> */}
+        <SkillsSection />
 
         {/* Projects */}
         <section className="flex flex-col justify-center items-center gap-5 mt-15 ">

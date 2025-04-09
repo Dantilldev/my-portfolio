@@ -4,6 +4,7 @@ import {MdOutlineEmail} from "react-icons/md";
 import {LuSun, LuMoon} from "react-icons/lu";
 import {CiLinkedin} from "react-icons/ci";
 import {VscGithubAlt} from "react-icons/vsc";
+import {SiReaddotcv} from "react-icons/si";
 import {useState} from "react";
 import {motion} from "framer-motion";
 import {IoMoon} from "react-icons/io5";
@@ -14,6 +15,8 @@ const hobbies = [
   "Gaming",
   "Music",
   "Programming",
+  "Nature",
+  "Food",
 ];
 
 const education = [
@@ -35,11 +38,19 @@ const education = [
 ];
 
 export default function HeaderLeft({darkMode, toggleDarkMode}) {
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(true);
+  const [showTooltip2, setShowTooltip2] = useState(true);
 
   function handleCopyEmail() {
     const email = "daniel.tilleria@hotmail.com";
     navigator.clipboard.writeText(email);
+  }
+
+  function handleDownload() {
+    const link = document.createElement("a"); // skapar en länk
+    link.href = "/Daniel-CV.pdf"; // sätter länken till CV:et
+    link.download = "Daniel-CV.pdf"; // sätter namnet på filen som ska laddas ner
+    link.click();
   }
 
   return (
@@ -86,13 +97,20 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
             </li>
             {showTooltip && (
               <div
-                className="bg-[var(--hover-color) absolute top-93 left-70 px-2 bg-black text-white rounded-sm after:absolute after:bottom-[-5px] after:left-1/2 after:-translate-x-1/2
-                after:border-x-6 after:border-t-6 after:border-transparent after:border-t-black "
+                className="bg-[var(--hover-color) absolute top-93 left-70 px-2 bg-black text-white rounded-sm after:absolute after:-translate-x-2 after:bottom-[-2px] after:left-0.5 after:rotate-50
+                after:border-x-6 after:border-t-8 after:border-transparent after:border-t-black "
               >
                 <span className="text-sm">Click to copy</span>
               </div>
             )}
-            <li className="flex items-center gap-2">
+            <motion.li
+              whileHover={{
+                y: -2,
+                scale: 1.05,
+                transition: {type: "spring", stiffness: 300, damping: 10},
+              }}
+              className="flex items-center gap-2"
+            >
               <button
                 onClick={handleCopyEmail}
                 className="text-lg flex items-center gap-2"
@@ -103,15 +121,36 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
                 <MdOutlineEmail className="text-2xl " />
                 daniel.tilleria@hotmail.com
               </button>
-            </li>
-            <motion.li
-              initial={{opacity: 0, x: -20}}
-              animate={{opacity: 1, x: 0}}
-              transition={{delay: 0.2, duration: 0.8}}
-              className="flex items-center gap-2"
-            >
+            </motion.li>
+            <li className="flex items-center gap-2">
               <IoCallOutline className="text-2xl" />
               <span className="text-lg">076 078 46 69</span>
+            </li>{" "}
+            {showTooltip2 && (
+              <div
+                className="bg-[var(--hover-color) absolute top-122.5 left-35 px-2 bg-black text-white rounded-sm after:absolute after:rotate-90 after:bottom-[8px] after:-left-0 after:-translate-x-2
+                after:border-x-6 after:border-t-7 after:border-transparent after:border-t-black "
+              >
+                <span className="text-sm">Click to download</span>
+              </div>
+            )}
+            <motion.li
+              whileHover={{
+                y: -2, // Rörelse uppåt vid hover
+                scale: 1.05, // Gör länken lite större
+                transition: {type: "spring", stiffness: 300, damping: 10},
+              }}
+              className="flex items-center gap-2"
+            >
+              <button
+                onClick={handleDownload}
+                onMouseEnter={() => setShowTooltip2(true)}
+                onMouseLeave={() => setShowTooltip2(false)}
+                className="text-lg flex items-center"
+              >
+                <SiReaddotcv className="text-2xl m-2" />
+                <span className="text-xl">CV</span>
+              </button>
             </motion.li>
           </ul>
         </div>

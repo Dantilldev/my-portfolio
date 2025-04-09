@@ -169,7 +169,7 @@ button {
 .scroll-container2 {
   display: flex;
   width: max-content;
-  animation: scroll 25s linear infinite;
+  animation: scroll 50s linear infinite;
 }
 
 .scroll-container2 {
