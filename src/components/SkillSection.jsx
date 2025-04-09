@@ -48,7 +48,7 @@ export default function SkillsSection() {
       <h1 className="text-4xl font-bold py-3 text-center mb-5">
         The technologies I have been working with recently
       </h1>
-      <section className="flex flex-col mb-15 w-[420px] sm:w-[600px] md:w-[700px] lg:w-[700px] xl:w-[800px] mx-auto overflow-hidden">
+      <section className="flex flex-col mb-15 w-[300px] sm:w-[600px] md:w-[700px] lg:w-[700px] xl:w-[800px] mx-auto overflow-hidden">
         {/* First container with fade effect on both ends */}
         <div className="relative w-full overflow-hidden hover-pause mb-4">
           {/* Fade on left side */}
