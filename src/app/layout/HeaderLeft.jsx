@@ -128,8 +128,8 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
             </li>{" "}
             {showTooltip2 && (
               <div
-                className="bg-[var(--hover-color) absolute top-122.5 left-35 px-2 bg-black text-white rounded-sm after:absolute after:rotate-90 after:bottom-[8px] after:-left-0 after:-translate-x-2
-                after:border-x-6 after:border-t-7 after:border-transparent after:border-t-black "
+                className="bg-[var(--hover-color) absolute top-117  left-35 px-2 bg-black text-white rounded-sm after:absolute after:-translate-x-2 after:bottom-[-2px] after:left-0.5 after:rotate-50
+                after:border-x-6 after:border-t-8 after:border-transparent after:border-t-black "
               >
                 <span className="text-sm">Click to download</span>
               </div>
