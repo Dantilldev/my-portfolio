@@ -58,7 +58,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
       initial={{opacity: 0, x: -20}}
       animate={{opacity: 1, x: 0}}
       transition={{delay: 0.2, duration: 0.8}}
-      className="flex-1 min-h-screen w-full p-10 relative sm:border-r"
+      className="flex-1 min-h-screen p-10 relative lg:border-r "
     >
       <div className="flex flex-col gap-5">
         <div className="flex flex-col items-center justify-center gap-5">
@@ -90,7 +90,7 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
         </div>
         {/* Contact */}
         <div className=" flex flex-col items-start justify-start border-b p-5">
-          <ul className=" space-y-3">
+          <ul className="space-y-3">
             <li className="flex items-center gap-2">
               <IoLocationOutline className="text-2xl" />
               <span className="text-lg">Stockholm</span>

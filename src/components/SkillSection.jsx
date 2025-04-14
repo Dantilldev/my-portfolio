@@ -13,6 +13,7 @@ export default function SkillsSection() {
     {name: "MySQL", icon: "devicon-mysql-plain "},
     {name: "Web APIs", icon: "devicon-openapi-plain"},
     {name: "WAI-ARIA", icon: ""},
+    {name: "Trello", icon: "devicon-trello-plain"},
   ];
 
   const skillsData2 = [
@@ -49,7 +50,7 @@ export default function SkillsSection() {
       <h1 className="text-4xl font-bold py-3 text-center mb-5">
         The technologies I have been working with recently
       </h1>
-      <section className="flex flex-col mb-15 w-[300px] sm:w-[600px] md:w-[700px] lg:w-[700px] xl:w-[800px] mx-auto overflow-hidden">
+      <section className="flex flex-col mb-15 w-[300px] sm:w-[600px] md:w-[700px] lg:w-[700px] xl:w-[800px] mx-auto overflow-hidden ">
         {/* skillData1 */}
         <div className="relative w-full overflow-hidden hover-pause mb-4">
           <div className="absolute top-0 left-0 h-full w-10 bg-gradient-right z-10" />
