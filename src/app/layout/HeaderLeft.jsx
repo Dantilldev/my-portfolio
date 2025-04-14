@@ -40,6 +40,7 @@ const education = [
 export default function HeaderLeft({darkMode, toggleDarkMode}) {
   const [showTooltip, setShowTooltip] = useState(false);
   const [showTooltip2, setShowTooltip2] = useState(false);
+  const [showTooltip3, setShowTooltip3] = useState(false);
 
   function handleCopyEmail() {
     const email = "daniel.tilleria@hotmail.com";
@@ -97,8 +98,8 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
             </li>
             {showTooltip && (
               <div
-                className="bg-[var(--hover-color) absolute top-93 left-70 px-2 bg-black text-white rounded-sm after:absolute after:-translate-x-2 after:bottom-[-2px] after:left-0.5 after:rotate-50
-                after:border-x-6 after:border-t-8 after:border-transparent after:border-t-black "
+                className="bg-[var(--hover-color) absolute top-95 left-72 px-2 bg-black text-white rounded-sm after:absolute after:-translate-x-2 after:bottom-[-2px] after:left-1 after:rotate-50
+                after:border-x-6 after:border-t-8 after:border-transparent after:border-t-black"
               >
                 <span className="text-sm">Click to copy</span>
               </div>
@@ -122,13 +123,32 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
                 daniel.tilleria@hotmail.com
               </button>
             </motion.li>
-            <li className="flex items-center gap-2">
+            {showTooltip3 && (
+              <div
+                className="bg-[var(--hover-color) absolute top-109 left-57 px-2 bg-black text-white rounded-sm after:absolute after:-translate-x-2 after:bottom-[-2px] after:left-1 after:rotate-50
+                after:border-x-6 after:border-t-8 after:border-transparent after:border-t-black "
+              >
+                <span className="text-sm">Click to call</span>
+              </div>
+            )}
+            <motion.li
+              whileHover={{
+                y: -2,
+                scale: 1.05,
+                transition: {type: "spring", stiffness: 300, damping: 10},
+              }}
+              className="flex items-center gap-2"
+              onMouseEnter={() => setShowTooltip3(true)}
+              onMouseLeave={() => setShowTooltip3(false)}
+            >
               <IoCallOutline className="text-2xl" />
-              <span className="text-lg">076 078 46 69</span>
-            </li>{" "}
+              <a href="tel:0760784669" className="text-lg">
+                076 078 46 69
+              </a>
+            </motion.li>{" "}
             {showTooltip2 && (
               <div
-                className="bg-[var(--hover-color) absolute top-117  left-35 px-2 bg-black text-white rounded-sm after:absolute after:-translate-x-2 after:bottom-[-2px] after:left-0.5 after:rotate-50
+                className="bg-[var(--hover-color) absolute top-121  left-35 px-2 bg-black text-white rounded-sm after:absolute after:-translate-x-2 after:bottom-[-2px] after:left-1 after:rotate-50
                 after:border-x-6 after:border-t-8 after:border-transparent after:border-t-black "
               >
                 <span className="text-sm">Click to download</span>
