@@ -16,7 +16,7 @@ const hobbies = [
   "Music",
   "Programming",
   "Nature",
-  "Food",
+  "Sports",
 ];
 
 const education = [
@@ -49,8 +49,8 @@ export default function HeaderLeft({darkMode, toggleDarkMode}) {
 
   function handleDownload() {
     const link = document.createElement("a"); // skapar en länk
-    link.href = "/Daniel-CV.pdf"; // sätter länken till CV:et
-    link.download = "Daniel-CV.pdf"; // sätter namnet på filen som ska laddas ner
+    link.href = "/DanielTilleria.pdf"; // sätter länken till CV:et
+    link.download = "Daniel Tilleria.pdf"; // sätter namnet på filen som ska laddas ner
     link.click();
   }
 

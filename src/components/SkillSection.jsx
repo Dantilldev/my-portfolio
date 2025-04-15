@@ -17,6 +17,8 @@ export default function SkillsSection() {
   ];
 
   const skillsData2 = [
+    {name: "React Native", icon: "devicon-react-original"},
+    {name: "TypeScript", icon: "devicon-typescript-plain"},
     {name: "AWS", icon: "devicon-amazonwebservices-plain-wordmark"},
     {name: "Docker", icon: "devicon-docker-plain "},
     {name: "GitHub", icon: "devicon-github-original"},
@@ -25,9 +27,10 @@ export default function SkillsSection() {
     {name: "VS Code", icon: "devicon-vscode-plain "},
     {name: "Git", icon: "devicon-git-plain "},
     {name: "GitHub Actions", icon: "devicon-githubactions-plain"},
-    {name: "CI/CD", icon: "devicon-jest-plain"},
-    {name: "Responsive Design", icon: ""},
+    {name: "Jest", icon: "devicon-jest-plain"},
+    {name: "CI/CD", icon: "devicon-circleci-plain"},
     {name: "Office 365", icon: ""},
+    {name: "Agile/Scrum", icon: "devicon-scrum-plain"},
   ];
 
   const scrollData1 = [
